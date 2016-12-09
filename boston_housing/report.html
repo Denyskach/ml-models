@@ -14035,7 +14035,7 @@ JEmSJElSj/1/STbPs3XHjQQAAAAASUVORK5CYII=
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> Dataset should be split on training and test subsets to avoid overfitting. In case we will use all available data for training we cannot be sure that our model is well generalised, and will have good performance on new data. Generally, it is recommended to have 3 datasets: training (for train your model), validation (to check performance of your model), and test (for making final decision how good your model generalises the data)</p>
+<p><strong>Answer: </strong> Dataset should be split on training and test subsets to check overfitting. In case we will use all available data for training we cannot be sure that our model is well generalised, and will have good performance on new data. Generally, it is recommended to have 3 datasets: training (for train your model), validation (to check performance of your model), and test (for making final decision how good your model generalises the data)</p>
 
 </div>
 </div>
@@ -16564,7 +16564,7 @@ mpmZmVkb+3/+Mi9eVRLwaQAAAABJRU5ErkJggg==
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong> Cross-validation training technique is using to avoid overfitting the model. By using K-fold cross-validation it is possible to train model by using all available data but avoid a possibility of overfitting. K-fold CV splits test\train data in k sequential folds. Each fold will be used once as validataion dataset, while the k - 1 remaining folds as training set. Resulting score of K-fold validation will be the mean of scores calculated for each run.
-For Grid search it is benefit to use K-fold, as grid search can try to tune same params for different chunks of data and finally find better params for a model.</p>
+For Grid search it is benefit to use K-fold, as grid search can try to tune same params for different chunks of data and finally find better params for a model that is not overfitting to a particular training split</p>
 
 </div>
 </div>
@@ -16740,7 +16740,7 @@ For Grid search it is benefit to use K-fold, as grid search can try to tune same
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[58]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Produce a matrix for client data</span>
@@ -16978,7 +16978,7 @@ NiRJUlaGDUmSlJVhQ5IkZWXYkCRJWRk2JElSVoYNSZKUlWFDkiRlZdiQJElZGTYkSVJWhg1JkpTV
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[59]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">vs</span><span class="o">.</span><span class="n">PredictTrials</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">prices</span><span class="p">,</span> <span class="n">fit_model</span><span class="p">,</span> <span class="n">client_data</span><span class="p">)</span>
@@ -16997,15 +16997,15 @@ NiRJUlaGDUmSlJVhQ5IkZWXYkCRJWRk2JElSVoYNSZKUlWFDkiRlZdiQJElZGTYkSVJWhg1JkpTV
 <pre>Trial 1: $411,000.00
 Trial 2: $411,417.39
 Trial 3: $415,800.00
-Trial 4: $428,316.00
+Trial 4: $420,622.22
 Trial 5: $413,334.78
 Trial 6: $411,931.58
-Trial 7: $399,663.16
+Trial 7: $390,250.00
 Trial 8: $407,232.00
 Trial 9: $402,531.82
 Trial 10: $413,700.00
 
-Range in prices: $28,652.84
+Range in prices: $30,372.22
 </pre>
 </div>
 </div>
@@ -17039,7 +17039,7 @@ Range in prices: $28,652.84
 <p><strong>Answer: </strong> I do not believe that we can use constructed model in real-world.
 The prices from 1978 are not relevant now, based on <a href="https://fred.stlouisfed.org/series/MASTHPI">https://fred.stlouisfed.org/series/MASTHPI</a>, now for buying a house we need much more money.
 The feature set is not sufficient as it is not covering all major price factors like: house age, a number of bedrooms and bathrooms, sqr ft, seasonality, etc.
-Range in predicted prices is 28K, I think it is a big difference for a price of the house.
+Range in predicted prices is 30K, I think it is a big difference for a price of the house.
 Data collected in an urban city would not be applicable for doing predictions for the price in the rural city, at least prices would be very different.</p>
 
 </div>
