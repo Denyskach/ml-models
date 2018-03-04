@@ -25,59 +25,6 @@ Bacteria|1|16|3|
 |||||
 Total|8,142|437,513|24,426|
 
-## Annotation Format
-We follow the annotation format of the [COCO dataset](http://mscoco.org/dataset/#download) and add additional fields. The annotations are stored in the [JSON format](http://www.json.org/) and are organized as follows:
-```
-{
-  "info" : info,
-  "images" : [image],
-  "categories" : [category],
-  "annotations" : [annotation],
-  "licenses" : [license]
-}
-
-info{
-  "year" : int,
-  "version" : str,
-  "description" : str,
-  "contributor" : str,
-  "url" : str,
-  "date_created" : datetime,
-}
-
-image{
-  "id" : int,
-  "width" : int,
-  "height" : int,
-  "file_name" : str,
-  "license" : int,
-  "rights_holder" : str
-}
-
-category{
-  "id" : int,
-  "name" : str,
-  "supercategory" : str,
-  "kingdom" : str,
-  "phylum" : str,
-  "class" : str,
-  "order" : str,
-  "family" : str,
-  "genus" : str
-}
-
-annotation{
-  "id" : int,
-  "image_id" : int,
-  "category_id" : int
-}
-
-license{
-  "id" : int,
-  "name" : str,
-  "url" : str
-}
-
 ## Data
 
 Download the dataset files here:
